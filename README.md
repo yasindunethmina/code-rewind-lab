@@ -25,7 +25,7 @@ Each subdirectory in this repository represents a different technology or concep
 - Next Auth
 - Prisma
 - Solidity
-- T3 StacK
+- T3 Stack
 
 ## How to Use
 
