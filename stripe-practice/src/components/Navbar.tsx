@@ -1,11 +1,17 @@
-"use client";
-import { NavigationMenu, NavigationMenuItem, NavigationMenuList } from "@/components/ui/navigation-menu";
+'use client';
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuList,
+} from '@/components/ui/navigation-menu';
 
-import { LogOut } from "lucide-react";
-import { ModeToggle } from "./ModeToggle";
-import { buttonVariants } from "./ui/button";
-import Link from "next/link";
+import { LogOut } from 'lucide-react';
+import { ModeToggle } from './ModeToggle';
+import { buttonVariants } from './ui/button';
+import Link from 'next/link';
 import { useKindeBrowserClient } from '@kinde-oss/kinde-auth-nextjs';
+import { useQuery } from '@tanstack/react-query';
+import { isUserSubscribed } from '@/app/api/premium/actions';
 
 interface RouteProps {
   href: string;
@@ -28,9 +34,14 @@ const routeList: RouteProps[] = [
 ];
 
 export const Navbar = () => {
-  const isSubscribed = true;
-
   const { isAuthenticated } = useKindeBrowserClient();
+
+  const { data } = useQuery({
+    queryKey: ['isUserSubscribed'],
+    queryFn: async () => isUserSubscribed(),
+  });
+
+  const isSubscribed = data?.subscribed;
 
   return (
     <header
@@ -68,7 +79,7 @@ export const Navbar = () => {
             {isAuthenticated && isSubscribed && (
               <Link
                 rel="noreferrer noopener"
-                href={'#'}
+                href={process.env.NEXT_PUBLIC_STRIPE_CUSTOMER_PORTAL_URL!}
                 target="_blank"
                 className={`text-[17px] ${buttonVariants({
                   variant: 'ghost',
