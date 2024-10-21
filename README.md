@@ -26,6 +26,7 @@ Each subdirectory in this repository represents a different technology or concep
 - Prisma
 - Solidity
 - T3 Stack
+- Stripe Webhooks
 
 ## How to Use
 
