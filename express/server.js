@@ -1,5 +1,5 @@
 import express from 'express';
-import path from 'path';
+import logger from './middleware/logger.js';
 import posts from './routes/posts.js';
 
 const port = process.env.PORT || 8000;
@@ -9,6 +9,9 @@ const app = express();
 // body parser middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false })); // alows sending form data
+
+// logger middleware
+app.use(logger);
 
 // html files render (can be accessed through /about.html likewise so no need to specify each)
 // app.use(express.static(path.join(__dirname, 'public')));
