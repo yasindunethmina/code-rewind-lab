@@ -20,7 +20,6 @@ Each subdirectory in this repository represents a different technology or concep
 
 (List the main technologies or topics you've included, for example:)
 - Docker
-- DSA
 - GraphQL
 - Next Auth
 - Prisma
