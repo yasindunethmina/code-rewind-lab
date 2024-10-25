@@ -1,16 +1,15 @@
 {
-  "name": "dsa-practice",
+  "name": "dsa",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node twoIntegerSum.js",
-    "dev": "nodemon twoIntegerSum.js"
+    "dev": "nodemon "
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "nodemon": "^3.1.6"
+    "nodemon": "^3.1.7"
   }
 }
