@@ -25,6 +25,7 @@ Each subdirectory in this repository represents a different technology or concep
 - Next Auth
 - Prisma
 - Solidity
+- Express
 - T3 Stack
 - Stripe Webhooks
 
